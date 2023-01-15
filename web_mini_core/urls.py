@@ -22,5 +22,6 @@ from django.urls import include, path
 urlpatterns = [
     # path("admin/", admin.site.urls),
     path('app/', include('contracts.urls')),
-    path('contracts/', RedirectView.as_view(url='/app/')), # Redirect on root
+    path('contracts/', RedirectView.as_view(url='/app/')), # Redirect on root (works on local environment)
+    path('', RedirectView.as_view(url='/app/')), # Redirect on root
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
