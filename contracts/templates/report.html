@@ -34,8 +34,10 @@
         </tbody>
       </table>
     </div>
-    <div class="d-flex justify-content-end pt-2 text-muted">
-      <span>Resultados: {{ results|length }}</span>
+    <div class="d-flex flex-column pt-2 text-muted">
+      <span>Clientes: {{ summary.clients }}</span>
+      <span>Contratos: {{ summary.contracts }}</span>
+      <span>Monto total: {{ summary.total_price|floatformat:2|intcomma }}</span>
     </div>
   {% else %}
     <div class="alert alert-info" role="alert">

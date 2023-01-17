@@ -49,7 +49,15 @@ def report(request):
             })
     # Sort the results by total price
     results.sort(key=lambda result: result['total_price'], reverse=True)
-    return render(request, 'report.html', {'form': form, 'results': results})
+    return render(request, 'report.html', {
+        'form': form,
+        'results': results,
+        'summary': {
+            'contracts': sum(result['contracts'] for result in results),
+            'total_price': sum(result['total_price'] for result in results),
+            'clients': len(results)
+        }
+    })
 
 def client_list(request):
     clients = Client.objects.all()
