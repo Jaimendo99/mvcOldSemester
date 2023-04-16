@@ -128,13 +128,7 @@ After creating the web service, you will be redirected to the web service dashbo
 
 ![](images/web-service/service-dashboard.png)
 
-> After creating the web service, you will need to wait a few minutes for the web service to be deployed and ready to use. Because of the free plan, the deployment may take longer than usual. You can check the status of the web service in the main dashboard. 
-
-If you have any problems with the deployment, you can go to the **Events** tab, click on a deployment event and check the logs for more information.
-
-![](images/web-service/service-events.png)
-
-![](images/web-service/service-event-logs.png)
+Now, we need to configure the environment variables of the web application (the deployment will probably fail up until this step).
 
 ### Set the environment variables
 
@@ -145,6 +139,16 @@ You must also include an additional environment variable called `PYTHON_VERSION`
 ![](images/web-service/service-environment-variables.png)
 
 Besides the production database settings, (variables with `DB_` prefix), you must also set a new random value for the `SECRET_KEY` variable, and set the `DEBUG` variable to `False`. See the [Environment variables](ENVIRONMENT-VARIABLES.md) guidelines for more information.
+
+Finally, save the changes made to the environment variables.
+
+> After saving the changes, you will need to wait a few minutes for the web service to be deployed and ready to use. Because of the free plan, the deployment may take longer than usual. You can check the status of the web service in the main dashboard. 
+
+If you have any problems with the deployment, you can go to the **Events** tab, click on a deployment event and check the logs for more information.
+
+![](images/web-service/service-events.png)
+
+![](images/web-service/service-event-logs.png)
 
 ### Final steps
 
